@@ -18,8 +18,12 @@ public class Jugador extends Futbolista{
     }
     
     @Override
-    public int compareTo(Futbolista otroJugador){
-         return Math.abs(this.getEdad()-otroJugador.getEdad());
+    public int compareTo(Object o){
+         if(o instanceof Jugador){
+             Jugador otroJugador = (Jugador) o;
+             return Math.abs(this.getEdad()- otroJugador.getEdad());
+          }else{return 0;}
+        }
     }
     
    @Override
@@ -27,7 +31,8 @@ public class Jugador extends Futbolista{
         return false;
     }
     
-    public String elJugador(){
+    @Override
+    public String toString(){
         return "El futbolista "+this.getNombre()+"tiene "+this.getEdad()+ ", y juega de "+this.getPosicion()+" con el dorsal "+this.dorsal+ ". Ha marcado "+this.golesMarcados;
     }
 }
