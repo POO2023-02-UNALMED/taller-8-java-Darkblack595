@@ -24,12 +24,11 @@ public class Jugador extends Futbolista{
              return Math.abs(this.getEdad()- otroJugador.getEdad());
           }else{return 0;}
         }
-    }
-    
-   @Override
+
+    @Override
     public boolean jugarConLasManos() {
-        return false;
-    }
+           return false;
+        }
     
     @Override
     public String toString(){
