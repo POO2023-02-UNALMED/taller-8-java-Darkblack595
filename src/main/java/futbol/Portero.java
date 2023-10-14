@@ -21,7 +21,8 @@ public class Portero extends Futbolista{
 
     @Override
     public int compareTo(Object o){
-         if(o instanceof Portero otroPortero){
+         if(o instanceof Portero){
+             Portero otroPortero = (Portero) o;
              return Math.abs(this.getEdad()- otroPortero.getEdad());
           }else{return 0;}
     }
